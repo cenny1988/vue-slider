@@ -46,12 +46,16 @@ var app = new Vue({
         prevSlide(){
             this.activeSlide === 0 ? this.activeSlide = this.sliders.length-1 : this.activeSlide--;
         },
-        hello(){
-            console.log(i);
+        playSliders(){
+            setInterval( ()=> {
+                this.nextSlide()
+            },3000)
+        },
+        changeSlide(index){
+            this.activeSlide = index;
         }
     },
 })
-
 //container.count();
 // console.log(this.counter);
 
