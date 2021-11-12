@@ -46,5 +46,6 @@ var app = new Vue({
             this.activeSlide === 0 ? this.activeSlide = this.sliders.length-1 : this.activeSlide--;
         }
     },
+    
 })
 

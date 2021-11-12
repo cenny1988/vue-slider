@@ -7,6 +7,7 @@ Quindi farlo funzionare con Vue, nel modo del framework.
 var app = new Vue({
     el:'#container',
     data:{
+        counter: 0,
         activeSlide: 0,
         sliders:[
             {
@@ -44,7 +45,22 @@ var app = new Vue({
         },
         prevSlide(){
             this.activeSlide === 0 ? this.activeSlide = this.sliders.length-1 : this.activeSlide--;
+        },
+        hello(){
+            console.log(i);
         }
     },
 })
+
+//container.count();
+// console.log(this.counter);
+
+// sliders.forEach(element => {
+//     element.addEventListener('click',
+//         function(){
+//             console.log('ciao');
+//         }
+//     );
+    
+// });
 
