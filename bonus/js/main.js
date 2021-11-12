@@ -55,7 +55,8 @@ var app = new Vue({
         playSliders: function(){
             //const self = this;
             this.player = setInterval( ()=> {
-                this.nextSlide()
+                // self.nextSlide();
+                this.nextSlide();
             },3000)
         },
         changeSlide(index){
