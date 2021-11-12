@@ -7,7 +7,7 @@ Quindi farlo funzionare con Vue, nel modo del framework.
 var app = new Vue({
     el:'#container',
     data:{
-        counter: 0,
+        player: '',
         activeSlide: 0,
         sliders:[
             {
@@ -39,6 +39,12 @@ var app = new Vue({
         ]
         
     },
+    mounted: function(){
+        this.playSliders()     
+    },
+    // beforeDestroy(){
+    //    clearInterval(this.player)
+    // },
     methods: {
         nextSlide(){
             this.activeSlide === this.sliders.length-1 ? this.activeSlide = 0 : this.activeSlide++;
@@ -46,8 +52,9 @@ var app = new Vue({
         prevSlide(){
             this.activeSlide === 0 ? this.activeSlide = this.sliders.length-1 : this.activeSlide--;
         },
-        playSliders(){
-            setInterval( ()=> {
+        playSliders: function(){
+            //const self = this;
+            this.player = setInterval( ()=> {
                 this.nextSlide()
             },3000)
         },
@@ -56,15 +63,4 @@ var app = new Vue({
         }
     },
 })
-//container.count();
-// console.log(this.counter);
-
-// sliders.forEach(element => {
-//     element.addEventListener('click',
-//         function(){
-//             console.log('ciao');
-//         }
-//     );
-    
-// });
 
